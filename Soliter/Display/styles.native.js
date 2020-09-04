@@ -1,19 +1,12 @@
 import { StyleSheet } from 'react-native'
-// import {
-//   widthPercentageToDP as wp,
-//   heightPercentageToDP as hp
-// } from 'react-native-responsive-screen'
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp
+} from 'react-native-responsive-screen'
 
-const { innerWidth } = window
-
-const wp = (num) => {
-  const res = innerWidth % num
-  return `${res}px`
-}
-
-const tileSize = 15
-const hovered = 10
-const boardSize = 90
+const tileSize = '15%'
+const hovered = '10%'
+const boardSize = '90%'
 
 export default StyleSheet.create({
   displayContainer: {
@@ -29,8 +22,8 @@ export default StyleSheet.create({
     backgroundColor: '#b34a30'
   },
   boardContainer: {
-    width: '40%',
-    height: '90%',
+    width: wp(boardSize),
+    height: wp(boardSize),
     backgroundColor: '#525456',
     borderRadius: 10,
     alignItems: 'center',
@@ -43,8 +36,8 @@ export default StyleSheet.create({
   tileContainer: {
     margin: 5,
     borderRadius: 10,
-    width: '90px',
-    height: '90px',
+    width: wp(tileSize),
+    height: wp(tileSize),
     backgroundColor: '#c4c6d4',
     justifyContent: 'center',
     alignItems: 'center'
@@ -52,14 +45,14 @@ export default StyleSheet.create({
   hovered: {
     zIndex: 2,
     backgroundColor: '#ff0000',
-    width: '80px',
-    height: '80px',
+    width: wp(hovered),
+    height: wp(hovered),
     borderRadius: 10
   },
   piece: {
     borderRadius: 10,
-    width: '90px',
-    height: '90px',
+    width: wp(tileSize),
+    height: wp(tileSize),
     backgroundColor: '#5c6ff1',
     zIndex: 1000,
     elevation: 300

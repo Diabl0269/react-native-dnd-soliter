@@ -1,4 +1,4 @@
-import React, { useState, useContext, createContext } from 'react'
+import React, { useState, useContext, createContext, useMemo } from 'react'
 
 const GameContext = createContext()
 const GameProvider = (props) => {
